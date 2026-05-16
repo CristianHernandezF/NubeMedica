@@ -210,9 +210,7 @@ public class CalendarioService {
         actividadPersonalRepository.deleteById(id);
     }
 
-    // ==========================================
     // AGENDA COMPLETA (Mezcla de tipos)
-    // ==========================================
 
     public List<EventoDTO> obtenerAgendaDoctor(String runDoctor) {
         // Aquí usamos eventoRepository porque queremos todo (Citas + Actividades)
@@ -222,9 +220,8 @@ public class CalendarioService {
                 .toList();
     }
 
-    // ==========================================
     // MÉTODOS PRIVADOS Y MAPEOS
-    // ==========================================
+
     @Transactional
     public void eliminarTodaLaAgendaDelDoctor(String runDoctor) {
         // 1. Buscar todas las citas médicas de este doctor para obtener los IDs de sus estados

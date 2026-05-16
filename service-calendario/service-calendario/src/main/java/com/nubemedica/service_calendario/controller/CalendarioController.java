@@ -17,9 +17,7 @@ public class CalendarioController {
     @Autowired
     private CalendarioService calendarioService;
 
-    // ==========================================
     // ENDPOINTS: CITAS MÉDICAS
-    // ==========================================
 
 @PostMapping("/citas")
     public ResponseEntity<CitaMedicaResponseDTO> crearCita(
@@ -93,9 +91,7 @@ public class CalendarioController {
         return ResponseEntity.noContent().build();
     }
 
-    // ==========================================
     // ENDPOINT: AGENDA GENERAL DEL DOCTOR
-    // ==========================================
 
     @GetMapping("/agenda/doctor")
     public ResponseEntity<List<EventoDTO>> obtenerAgendaCompleta(@RequestHeader("X-Doctor-Run") String runDoctor) {

@@ -115,7 +115,6 @@ public class AtencionesDoctorService {
                     .bodyToMono(Void.class)
                     .block();
         } catch (Exception e) {
-            // Logueamos el error pero permitimos que la desasociación continúe
             System.err.println("Error al limpiar citas en MS-CALENDARIO: " + e.getMessage());
         }
     }

@@ -71,9 +71,6 @@ public class PacienteService {
                 false);
     }
 
-    // MÉTODOS DE LECTURA (PROTEGIDOS)
-
-
     public Paciente obtenerPacientePorRun(String runPaciente, String runDoctorToken) {
         // SEGURIDAD: Validar que el paciente pertenece al doctor
         validarRelacionDoctorPaciente(runDoctorToken, runPaciente);
@@ -99,9 +96,7 @@ public class PacienteService {
                 .toList();
     }
 
-    // ==========================================
     // MÉTODOS DE ACTUALIZACIÓN / ELIMINACIÓN
-    // ==========================================
 
     @Transactional
     public Paciente actualizarPaciente(String runPaciente, ActualizarPacienteRequest request, String runDoctorToken) {
@@ -161,9 +156,7 @@ public class PacienteService {
                 .orElseThrow(() -> new NoExistePacienteException(runPaciente));
     }
 
-    // ==========================================
     // COMUNICACIÓN EXTERNA (WEBCLIENT)
-    // ==========================================
     
     private void validarRelacionDoctorPaciente(String runDoctor, String runPaciente) {
         try {
